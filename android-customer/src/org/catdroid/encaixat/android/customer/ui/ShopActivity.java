@@ -1,8 +1,9 @@
 package org.catdroid.encaixat.android.customer.ui;
 
 import org.catdroid.encaixat.android.customer.R;
+import org.catdroid.encaixat.android.customer.Session;
+import org.catdroid.encaixat.android.customer.util.InvoiceRequestTask;
 import org.catdroid.encaixat.android.dao.ServerManager;
-import org.catdroid.encaixat.bean.Shop;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,19 +23,20 @@ public class ShopActivity extends Activity {
 		String idShop = shopData.getExtras().getString("SHOP_ID");
 		
 		// request shop data from server
-		Shop s = null;
 		// Metode que ataca a la BBDD. Això és fake
-		s = ServerManager.sayHello(idShop);
+		Session.shop = ServerManager.sayHello(this, idShop, Session.customer.getIdCustomer()).getShop();
 		// Metode que ataca a la BBDD. Això és fake
 		
 		
 		// show recovered data in views
 		TextView txtShopId = (TextView) findViewById(R.id.txtShopID);
-		txtShopId.setText(s.getName());
+		txtShopId.setText(Session.shop.getName());
 				
 		TextView txtEncaixada = (TextView) findViewById(R.id.txtEncaixada);
 		txtEncaixada.setText(R.id.txtEncaixada);
 		
+		// start polling for incoming invoice
+		new InvoiceRequestTask(this).execute();
 	}
 
 
