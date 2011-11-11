@@ -1,9 +1,11 @@
 package org.catdroid.encaixat.bean;
 
 public class Transaction {
+	
 	Customer customer;
 	Invoice invoice;
 	Shop shop;
+		
 	public Transaction(Customer c, Invoice i, Shop s) {
 		super();
 		this.customer = c;

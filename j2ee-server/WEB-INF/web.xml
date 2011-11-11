@@ -12,26 +12,57 @@
 		<url-pattern>/foo</url-pattern>
 	</servlet-mapping>
 	
+	<!-- CUSTOMER SERVLETS -->
 	<servlet>
-		<servlet-name>ClientSayHello</servlet-name>
+		<servlet-name>CustomerSayHello</servlet-name>
 		<servlet-class>org.catdroid.encaixat.j2ee.servlet.customer.SayHelloServlet</servlet-class>
 		<load-on-startup />
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ClientSayHello</servlet-name>
+		<servlet-name>CustomerSayHello</servlet-name>
 		<url-pattern>/customer/sayHello</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ShopGetCustomers</servlet-name>
-		<servlet-class>org.catdroid.encaixat.j2ee.servlet.shop.GetCustomers</servlet-class>
+		<servlet-name>CustomerGetInvoice</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.customer.GetInvoiceServlet</servlet-class>
 		<load-on-startup />
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ShopGetCustomers</servlet-name>
-		<url-pattern>/shop/getCustomers</url-pattern>
+		<servlet-name>CustomerGetInvoice</servlet-name>
+		<url-pattern>/customer/getInvoice</url-pattern>
 	</servlet-mapping>
-
+	
+	<servlet>
+		<servlet-name>CustomerPayInvoice</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.customer.PayInvoiceServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerPayInvoice</servlet-name>
+		<url-pattern>/customer/payInvoice</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShopSendInvoice</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.shop.SendInvoiceServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShopSendInvoice</servlet-name>
+		<url-pattern>/shop/sendInvoice</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>ShopListTransactions</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.shop.ListTransactionsServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShopListTransactions</servlet-name>
+		<url-pattern>/shop/listTransactions</url-pattern>
+	</servlet-mapping>	
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
