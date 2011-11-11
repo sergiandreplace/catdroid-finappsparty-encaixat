@@ -58,7 +58,7 @@ public class ServerManager {
 		sb.append(a.getString(R.string.baseurl));
 		sb.append("sayHello");
 		sb.append("?idShop="+idShop);
-		sb.append("?idCustomer="+idCustomer);
+		sb.append("&idCustomer="+idCustomer);
 		
 		HttpResponse response;
 		Transaction t = null;
@@ -88,7 +88,7 @@ public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
 		sb.append(a.getString(R.string.baseurl));
 		sb.append("sayHello");
 		sb.append("?idShop="+idShop);
-		sb.append("?idCustomer="+idCustomer);
+		sb.append("&idCustomer="+idCustomer);
 		
 		HttpResponse response;
 		Invoice i = null;
