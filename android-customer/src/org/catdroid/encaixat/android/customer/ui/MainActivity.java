@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			final CharSequence[] CheckinItems = {"Codi QR", "Foursquare", "Google Places", "Facebook Places"};
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle(getString(R.string.how_to_check_in));
+			// React on list selection
 			builder.setItems(CheckinItems, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int item) {
 				if (CheckinItems[item] == "Codi QR") {
@@ -66,9 +67,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		  // handle the scanned ID_Shop code
 		  if (requestCode == 0) {
 		        if (resultCode == RESULT_OK) {
-		            String contents = intent.getStringExtra("SCAN_RESULT");
+		            String shopId = intent.getStringExtra("SCAN_RESULT");
 		            // Handle successful scan
-		  		  Toast.makeText(getBaseContext(), contents, Toast.LENGTH_SHORT).show();
+		            // shopId has the scanned Shop_ID value
+		  		  Toast.makeText(getBaseContext(), shopId, Toast.LENGTH_SHORT).show();
+		  		  // Show shop info activity
+					Intent i = new Intent(null, ShopActivity.class);
+					i.putExtra("SHOP_ID", shopId);
+					startActivity(i);
+		  		  
 		        } else if (resultCode == RESULT_CANCELED) {
 		            // Handle cancel
 		        }

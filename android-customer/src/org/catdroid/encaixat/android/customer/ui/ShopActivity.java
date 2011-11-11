@@ -5,13 +5,13 @@ import org.catdroid.encaixat.android.customer.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class CheckinProvidersActivity extends Activity {
+public class ShopActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.checkinproviders);
+		setContentView(R.layout.shop);
 	}
 
 }
