@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -70,9 +69,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		            String shopId = intent.getStringExtra("SCAN_RESULT");
 		            // Handle successful scan
 		            // shopId has the scanned Shop_ID value
-		  		  Toast.makeText(getBaseContext(), shopId, Toast.LENGTH_SHORT).show();
+//		  		  Toast.makeText(getBaseContext(), shopId, Toast.LENGTH_SHORT).show();
 		  		  // Show shop info activity
-					Intent i = new Intent(null, ShopActivity.class);
+					Intent i = new Intent(this, ShopActivity.class);
 					i.putExtra("SHOP_ID", shopId);
 					startActivity(i);
 		  		  
