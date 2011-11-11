@@ -9,6 +9,11 @@ public class ServerManager {
 	}
 	
 	public static Invoice getInvoices(String idCustomer, String idShop) {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return new Invoice("0", idShop, idCustomer, 0.0);
 	}
 }
