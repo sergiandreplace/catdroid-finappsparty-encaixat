@@ -36,7 +36,7 @@ public class ShopActivity extends Activity {
 		txtEncaixada.setText(R.id.txtEncaixada);
 		
 		// start polling for incoming invoice
-		new InvoiceRequestTask().execute();
+		new InvoiceRequestTask(this).execute();
 	}
 
 
