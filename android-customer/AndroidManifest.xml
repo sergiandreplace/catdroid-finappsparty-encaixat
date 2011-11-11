@@ -18,6 +18,9 @@
         <activity android:label="@string/app_name" android:name=".ui.CheckinProvidersActivity">
             
         </activity>
-    </application>
+        <activity android:label="@string/app_name" android:name=".ui.AboutActivity">
+            
+        </activity>
+        </application>
 
 </manifest>
