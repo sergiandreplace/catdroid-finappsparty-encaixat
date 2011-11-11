@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletResponse;
  * @date 11/11/11 17:48
  */
 @SuppressWarnings("serial")
-public class GsonHttpServlet extends HttpServlet {
-	protected void prepareResponse(HttpServletResponse resp) {
+public class BaseHttpServlet extends HttpServlet {
+	protected void prepareJsonResponse(HttpServletResponse resp) {
 		resp.setContentType("application/json; charset=UTF-8");
 	}
+	protected void prepareHtmlResponse(HttpServletResponse resp) {
+		resp.setContentType("text/plain; charset=UTF-8");
+	}	
 }
