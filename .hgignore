@@ -1,0 +1,17 @@
+# use glob syntax.
+syntax: glob
+
+*.class
+*.dex
+*.ap_
+*.apk 
+*.war
+*.cvsignore
+*.metadata/*
+*bin/*
+*R.java
+*j2ee-server/work
+
+# switch to regexp syntax.
+# syntax: regexp
+# ^\.pc/
