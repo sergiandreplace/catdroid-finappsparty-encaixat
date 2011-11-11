@@ -1,4 +1,4 @@
-package org.catdroid.encaixat.j2ee.servlet.client;
+package org.catdroid.encaixat.j2ee.servlet.customer;
 
 import java.io.IOException;
 import java.io.OutputStream;

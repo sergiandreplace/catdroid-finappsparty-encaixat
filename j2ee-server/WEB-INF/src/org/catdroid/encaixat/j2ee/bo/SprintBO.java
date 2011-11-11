@@ -1,5 +1,7 @@
 package org.catdroid.encaixat.j2ee.bo;
 
+import java.util.List;
+
 import org.catdroid.encaixat.bean.Customer;
 import org.catdroid.encaixat.bean.Shop;
 import org.catdroid.encaixat.bean.Transaction;
@@ -18,5 +20,15 @@ public class SprintBO {
 		}
 		
 		return SprintDAO.addTransaction(c, null, s);
+	}
+	
+	public static List<Customer> listCustomers(String idShop) throws Exception{
+		Shop s = SprintDAO.getShop(idShop);
+		
+		if (s==null){
+			throw new Exception("The Shop is null");
+		}
+		
+		return SprintDAO.listActiveCustomers(s);
 	}
 }
