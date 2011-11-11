@@ -14,12 +14,22 @@
 	
 	<servlet>
 		<servlet-name>ClientSayHello</servlet-name>
-		<servlet-class>org.catdroid.encaixat.j2ee.servlet.client.SayHelloServlet</servlet-class>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.customer.SayHelloServlet</servlet-class>
 		<load-on-startup />
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ClientSayHello</servlet-name>
-		<url-pattern>/client/sayHello</url-pattern>
+		<url-pattern>/customer/sayHello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ShopGetCustomers</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.shop.GetCustomers</servlet-class>
+		<load-on-startup />
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShopGetCustomers</servlet-name>
+		<url-pattern>/shop/getCustomers</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

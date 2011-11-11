@@ -21,4 +21,6 @@
 
     <string name="txtAmount">0.00 €</string>
 
+    <string name="how_to_check_in">Fer check-in amb:</string>
+        
 </resources>

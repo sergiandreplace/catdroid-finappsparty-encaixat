@@ -41,14 +41,14 @@ public class SprintDAO {
 		transactions.add(t);
 		return t;
 	}
-	public static Invoice getInvoice(String id){
-		return invoices.get(id);
+	public static Invoice getInvoice(String idInvoice){
+		return invoices.get(idInvoice);
 	}
-	public static Customer getCustomer(String id){
-		return customers.get(id);
+	public static Customer getCustomer(String idCustomer){
+		return customers.get(idCustomer);
 	}
-	public static Shop getShop(String id){
-		return shops.get(id);
+	public static Shop getShop(String idShop){
+		return shops.get(idShop);
 	}
 	public static Transaction getTransaction(Customer c, Invoice i, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
@@ -61,5 +61,15 @@ public class SprintDAO {
 			}
 		}
 		return null;
+	}
+	public static List<Customer> listActiveCustomers(Shop s){
+		List<Customer> customers = new ArrayList<Customer>();
+		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
+			Transaction t = iterator.next();
+			if (t.getShop().getIdShop().equals(s.getIdShop())){
+				customers.add(t.getCustomer());
+			}
+		}
+		return customers;
 	}
 }
