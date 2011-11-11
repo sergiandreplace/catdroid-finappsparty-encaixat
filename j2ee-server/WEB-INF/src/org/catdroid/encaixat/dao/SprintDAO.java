@@ -18,9 +18,9 @@ public class SprintDAO {
 	
 	private static List<Transaction> transactions = new ArrayList<Transaction>();
 	
-	public static Invoice addInvoice(String idShop, String idCustomer){
+	public static Invoice addInvoice(String idShop, String idCustomer, Double quantity){
 		String size = ""+invoices.size();
-		Invoice i = new Invoice(size, idShop, idCustomer);
+		Invoice i = new Invoice(size, idShop, idCustomer, quantity);
 		invoices.put(size, i);
 		return i;
 	}
@@ -44,6 +44,17 @@ public class SprintDAO {
 	public static Invoice getInvoice(String idInvoice){
 		return invoices.get(idInvoice);
 	}
+	public static Invoice getInvoice(Customer c, Shop s){
+		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
+			Transaction t = iterator.next();
+			if (t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
+				t.getShop().getIdShop().equals(s.getIdShop())
+			){
+				return t.getInvoice();
+			}
+		}
+		return null;
+	}
 	public static Customer getCustomer(String idCustomer){
 		return customers.get(idCustomer);
 	}
@@ -62,14 +73,29 @@ public class SprintDAO {
 		}
 		return null;
 	}
-	public static List<Customer> listActiveCustomers(Shop s){
-		List<Customer> customers = new ArrayList<Customer>();
+	public static Transaction getTransaction(Customer c, Shop s){
+		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
+			Transaction t = iterator.next();
+			if (t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
+				t.getShop().getIdShop().equals(s.getIdShop())
+			){
+				return t;
+			}
+		}
+		return null;
+	}
+	public static List<Transaction> listActiveTransactions(Shop s){
+		List<Transaction> shopTransactions = new ArrayList<Transaction>();
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
 			if (t.getShop().getIdShop().equals(s.getIdShop())){
-				customers.add(t.getCustomer());
+				shopTransactions.add(t);
 			}
 		}
-		return customers;
+		return shopTransactions;
+	}
+	public static Invoice payInvoice(Invoice i){
+		i.setStatus(Invoice.FINISHED);
+		return i;
 	}
 }
