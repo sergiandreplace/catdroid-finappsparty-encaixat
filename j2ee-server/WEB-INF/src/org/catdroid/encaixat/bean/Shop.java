@@ -4,6 +4,11 @@ public class Shop {
 	String idShop;
 	String name;
 	
+	public Shop(String i, String n){
+		idShop = i;
+		name = n;
+	}
+	
 	public String getIdShop() {
 		return idShop;
 	}
