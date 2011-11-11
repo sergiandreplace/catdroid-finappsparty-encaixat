@@ -24,7 +24,7 @@ public class ShopActivity extends Activity {
 		// request shop data from server
 		Shop s = null;
 		// Metode que ataca a la BBDD. Això és fake
-		s = ServerManager.sayHello(idShop);
+		s = ServerManager.sayHello(this, idShop);
 		// Metode que ataca a la BBDD. Això és fake
 		
 		
