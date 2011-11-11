@@ -22,6 +22,7 @@ public class SprintFooServlet extends BaseHttpServlet{
 		SprintDAO.addShop("StarBUGs");
 		SprintDAO.addShop("Banana Split");
 		SprintDAO.addShop("Mc Nugget");
+		SprintDAO.addShop("La Alergía de Vivir");
 		
 	}
 }
