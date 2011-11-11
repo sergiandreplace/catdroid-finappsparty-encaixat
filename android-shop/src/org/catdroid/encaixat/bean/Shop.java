@@ -4,6 +4,9 @@ public class Shop {
 	String idShop;
 	String name;
 	
+	public Shop(){
+		
+	}
 	public Shop(String i, String n){
 		idShop = i;
 		name = n;
