@@ -9,5 +9,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtShopID" />
+
+    <TextView
+        android:id="@+id/txtEncaixada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtEncaixada" />
 
 </LinearLayout>
