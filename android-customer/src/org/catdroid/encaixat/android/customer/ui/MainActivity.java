@@ -1,6 +1,7 @@
 package org.catdroid.encaixat.android.customer.ui;
 
 import org.catdroid.encaixat.android.customer.R;
+import org.catdroid.encaixat.android.customer.Session;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,6 +20,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		initSession();
+		
 		Button btnCheckinProviders = (Button) findViewById(R.id.btnCheckin);
 		Button btnProfile = (Button) findViewById(R.id.btnProfile);
 		Button btnAbout = (Button) findViewById(R.id.btnAbout);
@@ -28,6 +31,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		btnAbout.setOnClickListener(this);
 	}
 
+	public void initSession() {
+		// get initial data
+		Session.customer.setIdCustomer("0");
+		Session.customer.setName("Perico Palotes");
+		Session.customer.setPicture("pregunteu_al_Roc");
+		
+	}
+	
 	public void onClick(View v) {
 		if (v.getId() == R.id.btnCheckin) {
 			// Show dialog list with checkin providers
