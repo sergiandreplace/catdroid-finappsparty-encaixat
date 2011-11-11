@@ -3,13 +3,23 @@
 	<display-name>Encaixa't!</display-name>
 
 	<servlet>
-		<servlet-name>GetMessage</servlet-name>
-		<servlet-class>com.eaginsoftware.dejaloya.message.servlet.get.GetMessageServlet</servlet-class>
+		<servlet-name>SprintFooServlet</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.SprintFooServlet</servlet-class>
 		<load-on-startup />
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>GetMessage</servlet-name>
-		<url-pattern>/messages/get</url-pattern>
+		<servlet-name>SprintFooServlet</servlet-name>
+		<url-pattern>/foo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ClientSayHello</servlet-name>
+		<servlet-class>org.catdroid.encaixat.j2ee.servlet.client.SayHelloServlet</servlet-class>
+		<load-on-startup />
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientSayHello</servlet-name>
+		<url-pattern>/client/sayHello</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

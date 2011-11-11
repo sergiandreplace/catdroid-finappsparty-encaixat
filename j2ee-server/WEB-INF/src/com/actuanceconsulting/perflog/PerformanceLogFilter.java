@@ -43,22 +43,9 @@ public class PerformanceLogFilter implements Filter {
 	 * Gives more flexibility than the standard servlet url-filter. All requests
 	 * are logged if not specified.
 	 * */
-	private static final String URL_FILTER_PARAM = "url-filter";
-
-	/**
-	 * An optional log4j category to use. The fully qualified class name of the
-	 * filter will be used if not specified.
-	 */
-	private static final String LOG_CATEGORY_PARAM = "log-category";
-
-	private String urlFilter;
-
+	
 	public void init(FilterConfig config) throws ServletException {
-		String logCategory = config.getInitParameter(LOG_CATEGORY_PARAM);
-		if (logCategory == null) {
-			this.getClass().getName();
-		}
-		urlFilter = config.getInitParameter(URL_FILTER_PARAM);
+		Log.i(this.getClass() + " Filter started!");
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response,
@@ -68,16 +55,12 @@ public class PerformanceLogFilter implements Filter {
 		long endTime;
 		String path = ((HttpServletRequest) request).getServletPath();
 
-		if (urlFilter == null || path.matches(urlFilter)) {
-			startTime = System.currentTimeMillis();
-			chain.doFilter(request, response);
-			endTime = System.currentTimeMillis();
+		startTime = System.currentTimeMillis();
+		chain.doFilter(request, response);
+		endTime = System.currentTimeMillis();
 
-			// Log the servlet path and time taken
-			Log.i(path + "," + (endTime - startTime));
-		} else {
-			chain.doFilter(request, response);
-		}
+		// Log the servlet path and time taken
+		Log.i(path + " " + (endTime - startTime) + "ms");
 	}
 
 	public void destroy() {
