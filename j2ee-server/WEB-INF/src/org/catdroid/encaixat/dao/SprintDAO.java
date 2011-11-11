@@ -36,8 +36,8 @@ public class SprintDAO {
 		shops.put(size, s);
 		return s;
 	}
-	public static Transaction addTransaction(Customer c, Invoice i, Shop s){
-		Transaction t = new Transaction(c, i, s);
+	public static Transaction createTransaction(Customer c, Shop s){
+		Transaction t = new Transaction(c, null, s);
 		transactions.add(t);
 		return t;
 	}
