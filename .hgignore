@@ -11,6 +11,7 @@ syntax: glob
 *bin/*
 *R.java
 *j2ee-server/work
+.settings/*
 
 # switch to regexp syntax.
 # syntax: regexp
