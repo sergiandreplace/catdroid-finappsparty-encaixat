@@ -24,5 +24,7 @@
     <string name="how_to_check_in">Fer check-in amb:</string>
 
     <string name="txtShopID">SHOP_ID</string>
+
+    <string name="txtEncaixada">Esperant encaixada...</string>
         
 </resources>
