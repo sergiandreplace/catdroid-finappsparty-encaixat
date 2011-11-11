@@ -24,5 +24,13 @@
     <string name="how_to_check_in">Fer check-in amb:</string>
 
     <string name="txtShopID">SHOP_ID</string>
+
+    <string name="txtEncaixada">Esperant encaixada...</string>
+
+    <string name="txtResult">Resultat de l\'encaixada</string>
+
+    <string name="btnNewInvoice">Nova encaixada</string>
+
+    <string name="btnExit">Sortir de la botiga</string>
         
 </resources>

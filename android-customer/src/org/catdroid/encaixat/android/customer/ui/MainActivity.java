@@ -48,12 +48,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		if (v.getId() == R.id.btnProfile) {
 			// Show profile info
-			Intent i = new Intent(null, UserProfileActivity.class);
+			Intent i = new Intent(this, UserProfileActivity.class);
 			startActivity(i);
 		}
 		if (v.getId() == R.id.btnAbout) {
 			// Show about screen
-			Intent i = new Intent(null, AboutActivity.class);
+			Intent i = new Intent(this, AboutActivity.class);
 			startActivity(i);
 		}
 
