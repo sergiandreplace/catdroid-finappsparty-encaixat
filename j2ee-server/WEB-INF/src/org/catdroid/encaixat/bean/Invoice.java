@@ -5,6 +5,12 @@ public class Invoice {
 	String idShop;
 	String idCustomer;
 	
+	public Invoice(String i, String s, String c){
+		idInvoice = i;
+		idShop = s;
+		idCustomer = c;
+	}
+	
 	public String getIdInvoice() {
 		return idInvoice;
 	}
