@@ -2,6 +2,7 @@ package org.catdroid.encaixat.android.customer.ui;
 
 import org.catdroid.encaixat.android.customer.R;
 import org.catdroid.encaixat.android.customer.Session;
+import org.catdroid.encaixat.bean.Customer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,10 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	public void initSession() {
 		// get initial data
-		Session.customer.setIdCustomer("0");
-		Session.customer.setName("Perico Palotes");
-		Session.customer.setPicture("pregunteu_al_Roc");
-		
+		Session.customer = new Customer("0", "Perico Palotes", "pregunteu_al_Roc");
 	}
 	
 	public void onClick(View v) {

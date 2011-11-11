@@ -2,9 +2,7 @@ package org.catdroid.encaixat.android.dao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -14,7 +12,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.catdroid.encaixat.android.customer.R;
-import org.catdroid.encaixat.bean.Shop;
+import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
 
 import android.app.Activity;
@@ -79,7 +77,35 @@ public class ServerManager {
 		}
 
 		return t;
+	}
+	
+public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
+		
+		DefaultHttpClient httpclient = getNewHttpClient();
+		
+		// Prepare a request object
+		StringBuilder sb = new StringBuilder();
+		sb.append(a.getString(R.string.baseurl));
+		sb.append("sayHello");
+		sb.append("?idShop="+idShop);
+		sb.append("?idCustomer="+idCustomer);
+		
+		HttpResponse response;
+		Invoice i = null;
 
-//		return new Shop(idShop, "Cansalada Bona");
+		try {
+			response = httpclient.execute(new HttpGet(sb.toString()));
+			HttpEntity entity = response.getEntity();
+
+			if (entity != null) {
+				String json = processContent(entity);
+				i = new Gson().fromJson(json, Invoice.class);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return i;
 	}
 }
