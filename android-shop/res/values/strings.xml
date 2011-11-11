@@ -3,5 +3,8 @@
 
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Punt de venda Encaixa\'t</string>
+    <string name="hello_header">Clients llestos per usar Encaixa\'t</string>
+    <string name="header_waiting">Esperant per fer una encaixada</string>
+    <string name="header_finished">Encaixades realitzades</string>
 
 </resources>

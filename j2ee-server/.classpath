@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="src" output="work" path="work"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/gson-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

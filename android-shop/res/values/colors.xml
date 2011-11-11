@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="Background">#000</color>
+    <color name="Text">#000</color>
+    <color name="TextShadow">#55cccccc</color>
+    <color name="ReverseText">#000</color>
+    <color name="CaixaYellow">#fdb829</color>
+    <color name="CaixaBlue">#6699cc</color>
+
+</resources>
