@@ -5,16 +5,22 @@ import org.catdroid.encaixat.android.dao.ServerManager;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Shop;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 
 public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 
+	Activity a = null;
+	public InvoiceRequestTask(Activity activity){
+		a = activity;
+	}
+	
 	@Override
 	protected Invoice doInBackground(Shop... arg0) {
 		// TODO Auto-generated method stub
 		Invoice inv = null;
 		do {
-			inv = ServerManager.getInvoices(Session.customer.getIdCustomer(), Session.shop.getIdShop());
+			inv = ServerManager.getInvoices(a, Session.shop.getIdShop(), Session.customer.getIdCustomer());
 		} while (inv == null);
 		
 		return inv;
