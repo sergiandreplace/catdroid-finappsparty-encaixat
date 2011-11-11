@@ -5,6 +5,12 @@ public class Customer {
 	String name;
 	String picture;
 
+	public Customer(String i, String n, String p){
+		idCustomer = i;
+		name = n;
+		picture = p;
+	}
+	
 	public String getIdCustomer() {
 		return idCustomer;
 	}
