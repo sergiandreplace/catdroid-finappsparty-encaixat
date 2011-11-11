@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 
 public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 
+	Activity a;
 	public InvoiceRequestTask(Activity activity){
 		a = activity;
 	}
