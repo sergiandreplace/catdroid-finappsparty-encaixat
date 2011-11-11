@@ -24,6 +24,11 @@ public class ShopActivity extends Activity {
 		// show recovered data in views
 		TextView txtShopId = (TextView) findViewById(R.id.txtShopID);
 		txtShopId.setText(shopId);
+		
+		TextView txtEncaixada = (TextView) findViewById(R.id.txtEncaixada);
+		
 	}
+
+
 
 }
