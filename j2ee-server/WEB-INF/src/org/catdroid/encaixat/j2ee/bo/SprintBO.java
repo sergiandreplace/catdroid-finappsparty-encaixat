@@ -20,7 +20,7 @@ public class SprintBO {
 			throw new Exception("The Shop is null");
 		}
 		
-		return SprintDAO.addTransaction(c, null, s);
+		return SprintDAO.createTransaction(c,s);
 	}
 	
 	public static Invoice getInvoice(String idCustomer, String idShop) throws Exception{
