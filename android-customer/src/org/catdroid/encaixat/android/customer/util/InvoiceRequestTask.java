@@ -22,6 +22,12 @@ public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 		// TODO Auto-generated method stub
 		Invoice inv = null;
 		do {
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			inv = ServerManager.getInvoices(a, Session.shop.getIdShop(), Session.customer.getIdCustomer());
 		} while (inv == null);
 		
@@ -38,24 +44,12 @@ public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 	protected void onPostExecute(Invoice result) {
 		// TODO Auto-generated method stub
 		super.onPostExecute(result);
+		// update Session data
+		Session.invoice.setIdInvoice(result.getIdInvoice());
+		// pass data on to next activity
 		Intent i = new Intent(a, InvoiceReceivedActivity.class);
+		i.putExtra("INVOICE_ID", result.getIdInvoice());
 		a.startActivity(i);
-		
-//		AlertDialog.Builder builder = new AlertDialog.Builder(a);
-//		builder.setMessage("Are you sure you want to exit?")
-//		.setCancelable(false)
-//		.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//		public void onClick(DialogInterface dialog, int id) {
-//		a.finish();
-//		}
-//		})
-//		.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//		public void onClick(DialogInterface dialog, int id) {
-//		dialog.cancel();
-//		}
-//		});
-//		AlertDialog alert = builder.create();
-//		alert.show();
 	}
 
 	@Override
