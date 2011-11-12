@@ -2,6 +2,7 @@ package org.catdroid.encaixat.android.shop.ui;
 
 import java.util.ArrayList;
 
+import org.catdroid.encaixat.android.shop.Constants;
 import org.catdroid.encaixat.android.shop.R;
 import org.catdroid.encaixat.android.shop.adapter.TransactionAdapter;
 import org.catdroid.encaixat.android.shop.manager.TransactionManager;
@@ -39,7 +40,7 @@ public class MainFragment extends Fragment {
 	
 	private void getData() {
 		
-		TransactionManager.updateTransactions();
+		TransactionManager.updateTransactions(Constants.ID_SHOP);
 		helloTransactions=TransactionManager.getStatusTransactions(TransactionManager.STATUS_HELLO);
 	}
 	
