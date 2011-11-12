@@ -15,10 +15,12 @@ import android.widget.TextView;
 public class TransactionAdapter extends ArrayAdapter<Transaction> {
 
 	private Context context;
+	public static int FORMAT_HELLO = 0;
+	public static int FORMAT_WAITING = 1;
+	public static int FORMAT_FINISHED = 2;
 	private ArrayList<Transaction> transactions;
-
 	public TransactionAdapter(Context context,
-			ArrayList<Transaction> transactions) {
+			ArrayList<Transaction> transactions, int listFormat ) {
 		super(context, R.layout.transaction_item, transactions);
 		this.context = context;
 		this.transactions = transactions;
