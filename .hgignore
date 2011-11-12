@@ -7,6 +7,7 @@ syntax: glob
 *.apk 
 *.war
 *.cvsignore
+*.tomcatplugin
 *.metadata/*
 *bin/*
 *R.java

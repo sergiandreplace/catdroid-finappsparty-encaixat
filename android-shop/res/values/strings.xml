@@ -7,4 +7,5 @@
     <string name="header_waiting">Esperant per fer una encaixada</string>
     <string name="header_finished">Encaixades realitzades</string>
 
+     <string name="baseurl">http://172.20.152.19/encaixat/shop/</string>
 </resources>
