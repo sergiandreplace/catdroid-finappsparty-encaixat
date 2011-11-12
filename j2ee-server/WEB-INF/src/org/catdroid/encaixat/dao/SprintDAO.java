@@ -67,7 +67,8 @@ public class SprintDAO {
 	public static Transaction getTransaction(Customer c, Invoice i, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
-			if (t.getInvoice().getIdInvoice().equals(i.getIdInvoice()) &&
+			if (t.getInvoice()!=null &&
+				t.getInvoice().getIdInvoice().equals(i.getIdInvoice()) &&
 				t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
 				t.getShop().getIdShop().equals(s.getIdShop())
 			){
@@ -76,10 +77,11 @@ public class SprintDAO {
 		}
 		return null;
 	}
-	public static Transaction getTransaction(Customer c, Shop s){
+	public static Transaction getWaitingTransaction(Customer c, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
-			if (t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
+			if (t.getInvoice()==null &&
+				t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
 				t.getShop().getIdShop().equals(s.getIdShop())
 			){
 				return t;
