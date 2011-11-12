@@ -82,7 +82,7 @@ public class SprintBO {
 		}
 		
 		Invoice i = SprintDAO.addInvoice(idShop, idCustomer, quantity);
-		Transaction t = SprintDAO.getTransaction(c, s);
+		Transaction t = SprintDAO.getWaitingTransaction(c, s);
 		t.setInvoice(i);
 		
 		return i;
