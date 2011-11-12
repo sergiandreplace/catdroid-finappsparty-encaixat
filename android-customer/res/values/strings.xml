@@ -42,4 +42,9 @@
     <string name="btnCancel">Rebutjar encaixada</string>
         
     <string name="lblResult">Resultat transacció</string>
+
+    <string name="invoiceReceivedOK">Encaixada completada!</string>
+        
+    <string name="invoiceReceivedCancelled">Encaixada cancelada!</string>
+
 </resources>
