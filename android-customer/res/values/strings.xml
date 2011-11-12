@@ -48,4 +48,8 @@
 	
 	<string name="lblReceipt">Rebut</string>
 	
+    <string name="invoiceReceivedOK">Rebut</string>
+    
+    <string name="invoiceReceivedCancelled">Rebut</string>
+	
 </resources>
