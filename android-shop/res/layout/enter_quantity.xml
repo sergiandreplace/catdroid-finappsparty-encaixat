@@ -199,14 +199,14 @@
             android:layout_height="120dp">
 
             <TextView
-                android:id="@+id/TextView01"
+                android:id="@+id/cancelButton"
                 style="@style/RedButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="@string/Cancel" android:layout_weight="1" android:textSize="50sp"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/okButton"
                 style="@style/GreenButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
