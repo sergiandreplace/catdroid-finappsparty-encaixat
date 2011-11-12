@@ -1,6 +1,7 @@
 package org.catdroid.encaixat.android.shop.manager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.catdroid.encaixat.android.shop.dao.ServerManager;
 import org.catdroid.encaixat.android.shop.image.BitmapLoader;
@@ -42,6 +43,7 @@ public class TransactionManager {
 				}
 			}
 		}
+		Collections.reverse(filteredTransactions);
 		return filteredTransactions;
 	}
 

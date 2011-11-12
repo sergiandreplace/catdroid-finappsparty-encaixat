@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -51,27 +52,32 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 			vh.background = (LinearLayout) v
 					.findViewById(R.id.TransactionBackground);
 			vh.amount = (TextView) v.findViewById(R.id.TransactionAmount);
-			vh.picture=(ImageView) v.findViewById(R.id.TransactionPicture);
+			//vh.picture = (ImageView) v.findViewById(R.id.TransactionPicture);
 			v.setTag(vh);
 		} else {
 			vh = (ViewHolder) v.getTag();
 		}
 
 		transaction = transactions.get(position);
+		if (transaction.getInvoice() == null) {
+			vh.name.setText(transaction.getCustomer().getName());
+		} else {
+			vh.name.setText(transaction.getCustomer().getName() + " ("
+					+ transaction.getInvoice().getIdInvoice() + ")");
 
-		vh.name.setText(transaction.getCustomer().getName());
-		vh.picture.setImageBitmap(BitmapLoader.getBitmap(transaction.getCustomer().getPicture()));
-//		if (listFormat != FORMAT_HELLO) {
-//			vh.amount.setText(transaction.getInvoice()
-//					.getQuantity().toString());
+		}
+		// vh.picture.setImageBitmap(BitmapLoader.getBitmap(transaction.getCustomer().getPicture()));
+		if (listFormat != FORMAT_HELLO) {
+			vh.amount.setText(String.format("%.2f €", transaction.getInvoice()
+					.getQuantity()));
 			if (listFormat == FORMAT_FINISHED) {
 				vh.background
 						.setBackgroundResource(R.drawable.button_green_normal);
 			}
-//			if (listFormat == FORMAT_WAITING) {
-//				vh.background.startAnimation(getWaitingAnimation());
-//			}
-//		}
+			if (listFormat == FORMAT_WAITING) {
+				vh.background.startAnimation(getWaitingAnimation());
+			}
+		}
 		return v;
 	}
 
@@ -79,14 +85,14 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 		TextView name;
 		LinearLayout background;
 		TextView amount;
-		ImageView picture;
 	}
 
 	private Animation getWaitingAnimation() {
-		AlphaAnimation anim = new AlphaAnimation(1f, 0.6f);
+		AlphaAnimation anim = new AlphaAnimation(1f, 0.4f);
 		anim.setDuration(1000);
-		anim.setRepeatMode(Animation.INFINITE);
-		anim.setInterpolator(new BounceInterpolator());
+		anim.setRepeatMode(Animation.REVERSE);
+		anim.setRepeatCount(Animation.INFINITE);
+		anim.setInterpolator(new LinearInterpolator());
 		return anim;
 	}
 

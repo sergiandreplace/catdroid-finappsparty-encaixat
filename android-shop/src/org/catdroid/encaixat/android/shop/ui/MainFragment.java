@@ -90,7 +90,7 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		Transaction transaction = TransactionManager.getTransactions().get(
+		Transaction transaction = helloTransactions.get(
 				position);
 		Intent i = new Intent(getActivity(), EnterPriceActivity.class);
 		i.putExtra(EnterPriceActivity.EXTRA_ID_CUSTOMER, transaction
