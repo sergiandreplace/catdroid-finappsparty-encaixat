@@ -2,9 +2,11 @@ package org.catdroid.encaixat.android.shop.dao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.zip.GZIPInputStream;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -16,8 +18,6 @@ import org.apache.http.params.HttpParams;
 import org.catdroid.encaixat.android.shop.Constants;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
-
-import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -70,9 +70,13 @@ public class ServerManager {
 			HttpEntity entity = response.getEntity();
 
 			if (entity != null) {
-				String json = processContent(entity);
-
-				l= (ArrayList<Transaction>) new Gson().fromJson(json, l.getClass());
+				InputStream instream = entity.getContent();
+				GZIPInputStream gzip = new GZIPInputStream(instream);
+				ObjectInputStream ois = new ObjectInputStream(gzip);
+				l = (ArrayList) ois.readObject();
+				ois.close();
+				gzip.close();
+				instream.close();
 			}
 
 		} catch (Exception e) { 
