@@ -2,6 +2,8 @@ package org.catdroid.encaixat.android.customer.ui;
 
 import org.catdroid.encaixat.android.customer.R;
 import org.catdroid.encaixat.android.customer.Session;
+import org.catdroid.encaixat.android.dao.ServerManager;
+import org.catdroid.encaixat.bean.Invoice;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -44,9 +46,24 @@ public class InvoiceReceivedActivity extends Activity implements OnClickListener
 		// TODO Auto-generated method stub
 		if (v.getId() == R.id.btnOK ) {
 			// accept payment
+			Invoice result = ServerManager.payInvoice(this, Session.shop.getIdShop(), Session.customer.getIdCustomer(), Session.invoice.getIdInvoice());
+			if (result.getStatus() == true) {
+				// status = FINISHED
+				Intent i = new Intent(this, ResultActivity.class);
+				i.putExtra("MESSAGE", R.string.invoiceReceivedOK);
+				startActivity(i);
+			} else {
+				// status = WAITING
+				Toast.makeText(this, "Something even weirder happened", Toast.LENGTH_SHORT);	
+			}
+			this.finish();
 		}
 		if (v.getId() == R.id.btnCancel ) {
 			// cancel payment
+			Intent i = new Intent(this, ResultActivity.class);
+			i.putExtra("MESSAGE", R.string.invoiceReceivedCancelled);
+			startActivity(i);
+			this.finish();
 		}
 	}
 
