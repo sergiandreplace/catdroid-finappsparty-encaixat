@@ -16,6 +16,9 @@ import android.widget.Toast;
 
 public class InvoiceReceivedActivity extends Activity implements OnClickListener {
 
+	public static int INVOICE_OK = 0;
+	public static int INVOICE_CANCELLED = 1;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -49,8 +52,9 @@ public class InvoiceReceivedActivity extends Activity implements OnClickListener
 			Invoice result = ServerManager.payInvoice(this, Session.shop.getIdShop(), Session.customer.getIdCustomer(), Session.invoice.getIdInvoice());
 			if (result.getStatus() == true) {
 				// status = FINISHED
+				Session.invoice = result;
 				Intent i = new Intent(this, ResultActivity.class);
-				i.putExtra("MESSAGE", R.string.invoiceReceivedOK);
+				i.putExtra("MESSAGE", INVOICE_OK);
 				startActivity(i);
 			} else {
 				// status = WAITING
@@ -61,7 +65,7 @@ public class InvoiceReceivedActivity extends Activity implements OnClickListener
 		if (v.getId() == R.id.btnCancel ) {
 			// cancel payment
 			Intent i = new Intent(this, ResultActivity.class);
-			i.putExtra("MESSAGE", R.string.invoiceReceivedCancelled);
+			i.putExtra("MESSAGE", INVOICE_CANCELLED);
 			startActivity(i);
 			this.finish();
 		}
