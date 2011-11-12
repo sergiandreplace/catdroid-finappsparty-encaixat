@@ -8,6 +8,13 @@ public class Invoice implements Serializable{
 	
 	String idInvoice;
 	String idShop;
+	public Double getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Double quantity) {
+		this.quantity = quantity;
+	}
+
 	String idCustomer;
 	Double quantity;
 
