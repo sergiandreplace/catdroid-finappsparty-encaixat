@@ -11,6 +11,9 @@ public class Invoice {
 
 	boolean status;  
 	
+	public Invoice(){
+		
+	}
 	public Invoice(String i, String s, String c, Double q){
 		idInvoice = i;
 		idShop = s;
@@ -43,4 +46,18 @@ public class Invoice {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\nidInvoice: " + idInvoice);
+		sb.append("\nidShop: " + idShop);
+		sb.append("\nidCustomers: " + idCustomer);
+		sb.append("\nquantity: " + quantity.toString());
+		sb.append("\nstatus: " + status);
+		
+		return sb.toString();
+	}
+	
+	
 }

@@ -1,8 +1,9 @@
-package org.catdroid.encaixat.android.dao;
+package org.catdroid.encaixat.android.shop.dao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -11,7 +12,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.catdroid.encaixat.android.customer.R;
+import org.catdroid.encaixat.android.shop.R;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
 
@@ -49,19 +50,18 @@ public class ServerManager {
 		return result.toString();
 	}
 	
-	public static Transaction sayHello(Activity a, String idShop, String idCustomer){
+	public static ArrayList<Transaction> listTransactions(Activity a, String idShop){
 		
 		DefaultHttpClient httpclient = getNewHttpClient();
 		
 		// Prepare a request object
 		StringBuilder sb = new StringBuilder();
 		sb.append(a.getString(R.string.baseurl));
-		sb.append("sayHello");
+		sb.append("listTransactions");
 		sb.append("?idShop="+idShop);
-		sb.append("&idCustomer="+idCustomer);
 		
 		HttpResponse response;
-		Transaction t = null;
+		ArrayList<Transaction> l = null;
 
 		try {
 			response = httpclient.execute(new HttpGet(sb.toString()));
@@ -69,26 +69,27 @@ public class ServerManager {
 
 			if (entity != null) {
 				String json = processContent(entity);
-				t = new Gson().fromJson(json, Transaction.class);
+				l = new Gson().fromJson(json, ArrayList.class);
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return t;
+		return l;
 	}
 	
-public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
+public static Invoice sendInvoice(Activity a, String idShop, String idCustomer, Double quantity){
 		
 		DefaultHttpClient httpclient = getNewHttpClient();
 		
 		// Prepare a request object
 		StringBuilder sb = new StringBuilder();
 		sb.append(a.getString(R.string.baseurl));
-		sb.append("sayHello");
+		sb.append("sendInvoice");
 		sb.append("?idShop="+idShop);
 		sb.append("&idCustomer="+idCustomer);
+		sb.append("&quantity="+quantity);
 		
 		HttpResponse response;
 		Invoice i = null;
