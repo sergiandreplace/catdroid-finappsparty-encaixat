@@ -29,22 +29,22 @@
     <style name="SectionHeader" parent="@style/StandardText">
         <item name="android:background">@drawable/panel_yellow</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_margin">7dp</item>
-        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:padding">5dp</item>
     </style>
 
     <style name="SectionTitle" parent="@style/StandardText">
         <item name="android:background">@drawable/panel_blue</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_margin">3dp</item>
-        <item name="android:padding">3dp</item>
+        <item name="android:padding">5dp</item>
     </style>
 
     <style name="SectionContent" parent="@style/StandardText">
         <item name="android:background">@drawable/panel_white</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:padding">5dp</item>
     </style>
 
 </resources>
