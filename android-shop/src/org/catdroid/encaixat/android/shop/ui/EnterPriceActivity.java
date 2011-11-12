@@ -42,6 +42,7 @@ public class EnterPriceActivity extends Activity {
 		View button7 = findViewById(R.id.number_7);
 		View button8 = findViewById(R.id.number_8);
 		View button9 = findViewById(R.id.number_9);
+		View button0 = findViewById(R.id.number_0);
 		button1.setOnClickListener(new NumberClickListener(this, 1));
 		button2.setOnClickListener(new NumberClickListener(this, 2));
 		button3.setOnClickListener(new NumberClickListener(this, 3));
@@ -51,6 +52,7 @@ public class EnterPriceActivity extends Activity {
 		button7.setOnClickListener(new NumberClickListener(this, 7));
 		button8.setOnClickListener(new NumberClickListener(this, 8));
 		button9.setOnClickListener(new NumberClickListener(this, 9));
+		button0.setOnClickListener(new NumberClickListener(this, 0));
 		
 		View resetButton = findViewById(R.id.number_c);
 		resetButton.setOnClickListener(new ResetClickListener(this));
