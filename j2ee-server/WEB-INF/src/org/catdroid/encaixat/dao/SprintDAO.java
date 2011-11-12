@@ -67,7 +67,8 @@ public class SprintDAO {
 	public static Transaction getTransaction(Customer c, Invoice i, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
-			if (t.getInvoice().getIdInvoice().equals(i.getIdInvoice()) &&
+			if ((t.getInvoice()==null ||
+				t.getInvoice().getIdInvoice().equals(i.getIdInvoice())) &&
 				t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
 				t.getShop().getIdShop().equals(s.getIdShop())
 			){

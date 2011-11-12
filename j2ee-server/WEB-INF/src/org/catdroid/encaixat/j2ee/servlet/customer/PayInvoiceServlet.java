@@ -44,7 +44,7 @@ public class PayInvoiceServlet extends BaseHttpServlet {
 		
 		Invoice i = null;
 		try {
-			i = SprintBO.payInvoice(idInvoice, idCustomer, idShop);
+			i = SprintBO.payInvoice(idCustomer, idShop, idInvoice);
 		} catch (Exception e) {
 			throw new ServletException(e.getMessage());
 		}
