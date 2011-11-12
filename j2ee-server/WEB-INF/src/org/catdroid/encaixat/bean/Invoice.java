@@ -11,6 +11,9 @@ public class Invoice {
 
 	boolean status;  
 	
+	public Invoice(){
+		
+	}
 	public Invoice(String i, String s, String c, Double q){
 		idInvoice = i;
 		idShop = s;
