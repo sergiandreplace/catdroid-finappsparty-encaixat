@@ -95,8 +95,7 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 		Intent i = new Intent(getActivity(), EnterPriceActivity.class);
 		i.putExtra(EnterPriceActivity.EXTRA_ID_CUSTOMER, transaction
 				.getCustomer().getIdCustomer());
-		// startActivityForResult(i, 0);
-		ServerManager.sendInvoice("0", "0", (double) 25);
+		startActivityForResult(i, 0);
 
 		update();
 	}
@@ -109,9 +108,9 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 					EnterPriceActivity.EXTRA_ID_CUSTOMER);
 			Double amount = data.getExtras().getDouble(
 					EnterPriceActivity.EXTRA_AMOUNT);
-		}
-		// ServerManager.sendInvoice(Constants.ID_SHOP, idCustomer, amount);
 
-		// }
+			ServerManager.sendInvoice(Constants.ID_SHOP, idCustomer, amount);
+
+		}
 	}
 }
