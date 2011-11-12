@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/SectionTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/SectionContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:layout_weight="1" android:gravity="top">
+
+        <TextView
+            android:id="@+id/lblResult"
+            style="@style/SectionHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblResult" />
+
+        <TextView
+            android:id="@+id/txtResult"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtResult" />
+
+        <TextView
+            android:id="@+id/txtShopName"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtShopName" />
+
+        <TextView
+            android:id="@+id/txtAmount"
+            style="@style/StandardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAmount" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnNewInvoice"
+            style="@style/GreenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnNewInvoice" android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnExit"
+            style="@style/RedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnExit" android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>
