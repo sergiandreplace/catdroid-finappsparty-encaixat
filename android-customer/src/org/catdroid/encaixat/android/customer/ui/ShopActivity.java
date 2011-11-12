@@ -35,7 +35,7 @@ public class ShopActivity extends Activity {
 		txtShopId.setText(Session.shop.getName());
 				
 		TextView txtEncaixada = (TextView) findViewById(R.id.txtEncaixada);
-		txtEncaixada.setText(R.id.txtEncaixada);
+		txtEncaixada.setText(R.string.txtEncaixada);
 		
 		// start polling for incoming invoice
 		task = new InvoiceRequestTask(this);
