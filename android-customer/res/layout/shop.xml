@@ -24,21 +24,22 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name" />
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         style="@style/SectionContent"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:gravity="top"
         android:orientation="vertical" >
-
+
         <TextView
             android:id="@+id/txtShopID"
             style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtShopID" />
-
+
         <TextView
             android:id="@+id/txtEncaixada"
             style="@style/StandardText"
