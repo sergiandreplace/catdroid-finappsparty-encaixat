@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/panel_white"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnCheckin"
+        style="@style/GreenButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/checkin" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        style="@style/RedButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/userprofile" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        style="@style/GreenButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkin"/>
+    </LinearLayout>
+
+</LinearLayout>
