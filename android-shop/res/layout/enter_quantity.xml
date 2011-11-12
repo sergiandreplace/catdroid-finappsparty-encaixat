@@ -56,7 +56,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/screenView"
                 style="@style/SectionHeader"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -107,7 +107,7 @@
                 android:layout_height="fill_parent" android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/number_3"
+                    android:id="@+id/number_4"
                     style="@style/StandardButton"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -115,7 +115,7 @@
                     android:text="@string/number_4" android:textSize="50sp"/>
 
                 <TextView
-                    android:id="@+id/number_4"
+                    android:id="@+id/number_5"
                     style="@style/StandardButton"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -199,14 +199,14 @@
             android:layout_height="120dp">
 
             <TextView
-                android:id="@+id/TextView01"
+                android:id="@+id/cancelButton"
                 style="@style/RedButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="@string/Cancel" android:layout_weight="1" android:textSize="50sp"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/okButton"
                 style="@style/GreenButton"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
