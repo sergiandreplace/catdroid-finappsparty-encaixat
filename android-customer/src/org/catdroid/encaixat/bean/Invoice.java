@@ -40,6 +40,12 @@ public class Invoice {
 	public void setIdCustomer(String idCustomer) {
 		this.idCustomer = idCustomer;
 	}
+	public Double getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Double q) {
+		this.quantity = q;
+	}
 	public boolean getStatus() {
 		return status;
 	}
