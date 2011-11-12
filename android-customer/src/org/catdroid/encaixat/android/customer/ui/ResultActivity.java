@@ -22,19 +22,20 @@ public class ResultActivity extends Activity implements OnClickListener {
 		Intent data = getIntent();
 		int invoiceResult = data.getExtras().getInt("MESSAGE");
 		TextView txtResult = (TextView) findViewById(R.id.txtResult);
+		TextView txtAmount = (TextView) findViewById(R.id.txtAmount);
 		switch (invoiceResult) {
 		case 0:
 			txtResult.setText(R.string.invoiceReceivedOK);
+			String amount = String.format("%.2f €", Session.invoice.getQuantity());
+			txtAmount.setText(amount);	
 			break;
 		case 1:
 			txtResult.setText(R.string.invoiceReceivedCancelled);
+			txtAmount.setText(R.string.txtAmount);
 			break;
 		}
 		
 		TextView txtShopName = (TextView) findViewById(R.id.txtShopName);
-		TextView txtAmount = (TextView) findViewById(R.id.txtAmount);
-		String amount = String.format("%.2f €", Session.invoice.getQuantity());
-		txtAmount.setText(amount);	
 		txtShopName.setText(Session.shop.getName());
 		
 		Button btnNewInvoice = (Button) findViewById(R.id.btnNewInvoice);
