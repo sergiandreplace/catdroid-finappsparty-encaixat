@@ -32,19 +32,27 @@
         android:layout_height="fill_parent"
         android:gravity="top"
         android:orientation="vertical" >
-
+
         <TextView
             android:id="@+id/txtShopID"
             style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtShopID" />
+            android:text="@string/txtShopID"
+            android:textSize="20dp" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
         <TextView
             android:id="@+id/txtEncaixada"
             style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/txtEncaixada" />
 
     </LinearLayout>
