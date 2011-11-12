@@ -3,6 +3,7 @@ package org.catdroid.encaixat.android.shop.manager;
 import java.util.ArrayList;
 
 import org.catdroid.encaixat.android.shop.dao.ServerManager;
+import org.catdroid.encaixat.android.shop.image.BitmapLoader;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
 
@@ -68,4 +69,5 @@ public class TransactionManager {
 		return transaction.getInvoice().getStatus() == Invoice.FINISHED;
 	}
 
+	
 }
