@@ -50,6 +50,7 @@ public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 		Intent i = new Intent(a, InvoiceReceivedActivity.class);
 		i.putExtra("INVOICE_ID", result.getIdInvoice());
 		a.startActivity(i);
+		a.finish();
 	}
 
 	@Override
