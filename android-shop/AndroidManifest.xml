@@ -12,13 +12,13 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".ui.MainActivity" android:screenOrientation="landscape">
+            android:name=".ui.MainActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:screenOrientation="landscape" android:name=".ui.EnterPriceActivity">
+        <activity android:screenOrientation="landscape" android:name=".ui.EnterPriceActivity" android:theme="@android:style/Theme.NoTitleBar">
 <!--             <intent-filter > -->
 <!--                 <action android:name="android.intent.action.MAIN" /> -->
 <!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
