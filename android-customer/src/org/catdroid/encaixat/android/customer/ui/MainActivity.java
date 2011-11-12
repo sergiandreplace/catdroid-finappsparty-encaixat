@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -26,6 +27,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		Button btnCheckinProviders = (Button) findViewById(R.id.btnCheckin);
 		Button btnProfile = (Button) findViewById(R.id.btnProfile);
 		Button btnAbout = (Button) findViewById(R.id.btnAbout);
+		
+		LinearLayout l3 = (LinearLayout) findViewById(R.id.linearLayout3);
+		l3.setOnClickListener(this);
+		LinearLayout l4 = (LinearLayout) findViewById(R.id.linearLayout4);
+		l4.setOnClickListener(this);
+		LinearLayout l5 = (LinearLayout) findViewById(R.id.linearLayout5);
+		l5.setOnClickListener(this);
 
 		btnCheckinProviders.setOnClickListener(this);
 		btnProfile.setOnClickListener(this);
@@ -38,7 +46,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 	
 	public void onClick(View v) {
-		if (v.getId() == R.id.btnCheckin) {
+		switch (v.getId()) {
+		case R.id.linearLayout3:
 			// Show dialog list with checkin providers
 			final CharSequence[] CheckinItems = {"Codi QR", "Foursquare", "Google Places", "Facebook Places"};
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -54,17 +63,45 @@ public class MainActivity extends Activity implements OnClickListener {
 			});
 			AlertDialog alert = builder.create();
 			alert.show();
-		}
-		if (v.getId() == R.id.btnProfile) {
+			break;
+		case R.id.linearLayout4:
 			// Show profile info
 			Intent i = new Intent(this, UserProfileActivity.class);
 			startActivity(i);
-		}
-		if (v.getId() == R.id.btnAbout) {
+			break;
+		case R.id.linearLayout5:
 			// Show about screen
-			Intent i = new Intent(this, AboutActivity.class);
-			startActivity(i);
+			Intent j = new Intent(this, AboutActivity.class);
+			startActivity(j);
+			break;
 		}
+//		if (v.getId() == R.id.btnCheckin) {
+//			// Show dialog list with checkin providers
+//			final CharSequence[] CheckinItems = {"Codi QR", "Foursquare", "Google Places", "Facebook Places"};
+//			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//			builder.setTitle(getString(R.string.how_to_check_in));
+//			// React on list selection
+//			builder.setItems(CheckinItems, new DialogInterface.OnClickListener() {
+//			public void onClick(DialogInterface dialog, int item) {
+//				if (CheckinItems[item] == "Codi QR") {
+//					Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+//			        startActivityForResult(intent, 0);
+//				}
+//			}
+//			});
+//			AlertDialog alert = builder.create();
+//			alert.show();
+//		}
+//		if (v.getId() == R.id.btnProfile) {
+//			// Show profile info
+//			Intent i = new Intent(this, UserProfileActivity.class);
+//			startActivity(i);
+//		}
+//		if (v.getId() == R.id.btnAbout) {
+//			// Show about screen
+//			Intent i = new Intent(this, AboutActivity.class);
+//			startActivity(i);
+//		}
 
 	}
 
