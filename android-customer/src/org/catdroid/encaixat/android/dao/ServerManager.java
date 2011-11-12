@@ -79,7 +79,7 @@ public class ServerManager {
 		return t;
 	}
 	
-public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
+	public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
 		
 		DefaultHttpClient httpclient = getNewHttpClient();
 		
@@ -106,6 +106,37 @@ public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
 			e.printStackTrace();
 		}
 
+		return i;
+	}
+
+	public static Invoice payInvoice(Activity a, String idShop, String idCustomer, String idInvoice){
+		
+		DefaultHttpClient httpclient = getNewHttpClient();
+		
+		// Prepare a request object
+		StringBuilder sb = new StringBuilder();
+		sb.append(a.getString(R.string.baseurl));
+		sb.append("payInvoice");
+		sb.append("?idShop="+idShop);
+		sb.append("&idCustomer="+idCustomer);
+		sb.append("&idInvoice="+idInvoice);
+		
+		HttpResponse response;
+		Invoice i = null;
+	
+		try {
+			response = httpclient.execute(new HttpGet(sb.toString()));
+			HttpEntity entity = response.getEntity();
+	
+			if (entity != null) {
+				String json = processContent(entity);
+				i = new Gson().fromJson(json, Invoice.class);
+			}
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
 		return i;
 	}
 }
