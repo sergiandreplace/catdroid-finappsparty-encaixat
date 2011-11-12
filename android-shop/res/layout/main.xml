@@ -62,7 +62,7 @@
 <!--         </fragment> -->
 
         <fragment
-            android:id="@+id/fragment1"
+            android:id="@+id/MainFragment"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:name="org.catdroid.encaixat.android.shop.ui.MainFragment" >

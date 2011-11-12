@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:screenOrientation="landscape" android:name=".ui.EnterPriceActivity"></activity>
     </application>
 
 </manifest>
