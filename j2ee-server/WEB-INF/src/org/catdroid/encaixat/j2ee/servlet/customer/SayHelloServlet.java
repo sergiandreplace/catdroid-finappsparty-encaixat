@@ -39,7 +39,8 @@ public class SayHelloServlet extends BaseHttpServlet {
 		
 		Transaction t = null;
 		try {
-			if (SprintBO.getWaitingTransaction(idCustomer, idShop)==null){
+			t = SprintBO.getWaitingTransaction(idCustomer, idShop);
+			if (t==null){
 				t = SprintBO.sayHello(idCustomer, idShop);
 			}
 		} catch (Exception e) {

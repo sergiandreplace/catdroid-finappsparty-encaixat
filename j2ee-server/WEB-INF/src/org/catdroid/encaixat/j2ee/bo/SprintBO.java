@@ -34,7 +34,7 @@ public class SprintBO {
 			throw new Exception("The Shop is null");
 		}
 		
-		Transaction t = SprintDAO.getWaitingTransaction(c, s);
+		Transaction t = SprintDAO.getWaitingTransactionHello(c, s);
 		return t;
 	}
 	

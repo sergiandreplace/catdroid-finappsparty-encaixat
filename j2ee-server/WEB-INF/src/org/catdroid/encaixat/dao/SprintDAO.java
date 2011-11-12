@@ -77,6 +77,18 @@ public class SprintDAO {
 		}
 		return null;
 	}
+	public static Transaction getWaitingTransactionHello(Customer c, Shop s){
+		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
+			Transaction t = iterator.next();
+			if ( (t.getInvoice()==null || t.getInvoice().getStatus()==Invoice.WAITING) &&
+				t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
+				t.getShop().getIdShop().equals(s.getIdShop())
+			){
+				return t;
+			}
+		}
+		return null;
+	}
 	public static Transaction getWaitingTransaction(Customer c, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
