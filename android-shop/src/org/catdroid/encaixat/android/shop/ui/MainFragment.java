@@ -97,7 +97,7 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 				.getCustomer().getIdCustomer());
 		startActivityForResult(i, 0);
 
-		update();
+		
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 					EnterPriceActivity.EXTRA_AMOUNT);
 
 			ServerManager.sendInvoice(Constants.ID_SHOP, idCustomer, amount);
-
+			update();
 		}
 	}
 }

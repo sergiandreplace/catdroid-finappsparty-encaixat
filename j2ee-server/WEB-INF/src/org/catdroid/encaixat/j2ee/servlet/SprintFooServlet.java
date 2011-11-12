@@ -12,19 +12,19 @@ public class SprintFooServlet extends BaseHttpServlet{
 		super.init();
 		
 		Log.i("Adding fake users...");
-		SprintDAO.addCustomer("Roc Boronat", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
-		SprintDAO.addCustomer("Jordi Bernabeu", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
-		SprintDAO.addCustomer("Sergi Martinez", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
-		SprintDAO.addCustomer("Jordi Varela", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
-		SprintDAO.addCustomer("Margarita Limón", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
-		SprintDAO.addCustomer("Rosa Naranjas", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
+		SprintDAO.addCustomer("Roc Boronat", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
+		SprintDAO.addCustomer("Jordi Bernabeu", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
+		SprintDAO.addCustomer("Sergi Martinez", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
+		SprintDAO.addCustomer("Jordi Varela", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
+		SprintDAO.addCustomer("Margarita Limon", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
+		SprintDAO.addCustomer("Rosa Naranjas", "http://mascot.crystalxp.net/png/riko-tooney---happy-face-2792.png");
 		
 		Log.i("Adding fake shops...");
 		SprintDAO.addShop("Catdroid's Store");
 		SprintDAO.addShop("StarBUGs");
 		SprintDAO.addShop("Banana Split");
 		SprintDAO.addShop("Mc Nugget");
-		SprintDAO.addShop("La Alergía de Vivir");
+		SprintDAO.addShop("La Alergia de Vivir");
 		
 	}
 }
