@@ -34,4 +34,10 @@
     <string name="btnExit">Sortir de la botiga</string>
         
     <string name="baseurl">http://172.20.152.19/encaixat/customer/</string>
+        
+    <string name="txtInvoiceReceived">Encaixada rebuda!</string>
+        
+    <string name="btnOK">Acceptar encaixada</string>
+        
+    <string name="btnCancel">Rebutjar encaixada</string>
 </resources>

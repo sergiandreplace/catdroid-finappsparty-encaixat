@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void initSession() {
 		// get initial data
 		Session.customer = new Customer("0", "Perico Palotes", "pregunteu_al_Roc");
-	}
+		}
 	
 	public void onClick(View v) {
 		if (v.getId() == R.id.btnCheckin) {
