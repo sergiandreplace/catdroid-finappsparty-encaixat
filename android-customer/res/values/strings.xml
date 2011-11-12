@@ -48,9 +48,9 @@
 	
 	<string name="lblReceipt">Rebut</string>
 	
-    <string name="invoiceReceivedOK">Rebut</string>
+    <string name="invoiceReceivedOK">Encaixada completada</string>
     
-    <string name="invoiceReceivedCancelled">Rebut</string>
+    <string name="invoiceReceivedCancelled">Encaixada rebutjada</string>
 	
     <string name="preference.customer.title">Usuari</string>
     <string name="preference.customer.summary">idUsuari a la base de dades</string>
