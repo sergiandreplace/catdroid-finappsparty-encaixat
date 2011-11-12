@@ -3,12 +3,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <LinearLayout
-        android:id="@+id/linearLayout1"
         style="@style/SectionTitle"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <ImageView
             android:id="@+id/imageView1"
@@ -19,20 +18,18 @@
         <TextView
             android:id="@+id/textView1"
             style="@style/StandardText"
-            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/app_name" />
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         style="@style/SectionContent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="32.10"
-        android:gravity="top"
-        android:orientation="vertical" >
+        android:orientation="vertical" android:layout_weight="1" android:gravity="top">
 
         <TextView
             android:id="@+id/lblResult"
@@ -49,52 +46,37 @@
             android:text="@string/txtResult" />
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <TextView
             android:id="@+id/txtShopName"
             style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/txtShopName"
-            android:textSize="20dp" />
-
+            android:text="@string/txtShopName" />
+
         <TextView
             android:id="@+id/txtAmount"
             style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/txtAmount"
-            android:textSize="24dp" />
-
+            android:text="@string/txtAmount" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content" >
+
         <Button
             android:id="@+id/btnNewInvoice"
             style="@style/GreenButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/btnNewInvoice" />
-
+            android:text="@string/btnNewInvoice" android:layout_weight="1"/>
+
         <Button
             android:id="@+id/btnExit"
             style="@style/RedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/btnExit" />
-
+            android:text="@string/btnExit" android:layout_weight="1"/>
     </LinearLayout>
 
 </LinearLayout>
