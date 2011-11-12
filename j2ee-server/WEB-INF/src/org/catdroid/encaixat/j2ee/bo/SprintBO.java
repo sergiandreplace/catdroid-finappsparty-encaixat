@@ -23,7 +23,7 @@ public class SprintBO {
 		return SprintDAO.createTransaction(c,s);
 	}
 	
-	public static Invoice getInvoice(String idCustomer, String idShop) throws Exception{
+	public static Invoice getWaitingInvoice(String idCustomer, String idShop) throws Exception{
 		Customer c = SprintDAO.getCustomer(idCustomer);
 		Shop s = SprintDAO.getShop(idShop);
 		
@@ -34,7 +34,7 @@ public class SprintBO {
 			throw new Exception("The Shop is null");
 		}
 		
-		return SprintDAO.getInvoice(c, s);
+		return SprintDAO.getWaitingInvoice(c, s);
 	}
 	
 	public static List<Transaction> listActiveTransactions(String idShop) throws Exception{

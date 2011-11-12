@@ -6,10 +6,15 @@ import org.catdroid.encaixat.android.shop.R;
 import org.catdroid.encaixat.bean.Transaction;
 
 import android.content.Context;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class TransactionAdapter extends ArrayAdapter<Transaction> {
@@ -19,11 +24,14 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 	public static int FORMAT_WAITING = 1;
 	public static int FORMAT_FINISHED = 2;
 	private ArrayList<Transaction> transactions;
+	private int listFormat;
+
 	public TransactionAdapter(Context context,
-			ArrayList<Transaction> transactions, int listFormat ) {
+			ArrayList<Transaction> transactions, int listFormat) {
 		super(context, R.layout.transaction_item, transactions);
 		this.context = context;
 		this.transactions = transactions;
+		this.listFormat = listFormat;
 	}
 
 	@Override
@@ -32,12 +40,15 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 
 		Transaction transaction;
 		if (v == null) {
-            LayoutInflater vi = LayoutInflater.from(context);
+			LayoutInflater vi = LayoutInflater.from(context);
 			v = vi.inflate(R.layout.transaction_item, null);
 		}
 		if (v.getTag() == null) {
 			vh = new ViewHolder();
 			vh.name = (TextView) v.findViewById(R.id.TransactionName);
+			vh.background = (LinearLayout) v
+					.findViewById(R.id.TransactionBackground);
+			vh.amount = (TextView) v.findViewById(R.id.TransactionAmount);
 			v.setTag(vh);
 		} else {
 			vh = (ViewHolder) v.getTag();
@@ -46,12 +57,32 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 		transaction = transactions.get(position);
 
 		vh.name.setText(transaction.getCustomer().getName());
-
+		if (listFormat != FORMAT_HELLO) {
+			vh.amount.setText(String.format("%d €", transaction.getInvoice()
+					.getQuantity().toString()));
+			if (listFormat == FORMAT_FINISHED) {
+				vh.background
+						.setBackgroundResource(R.drawable.button_green_normal);
+			}
+			if (listFormat == FORMAT_WAITING) {
+				vh.background.startAnimation(getWaitingAnimation());
+			}
+		}
 		return v;
 	}
 
 	private class ViewHolder {
 		TextView name;
+		LinearLayout background;
+		TextView amount;
+	}
+
+	private Animation getWaitingAnimation() {
+		AlphaAnimation anim = new AlphaAnimation(1f, 0.6f);
+		anim.setDuration(1000);
+		anim.setRepeatMode(Animation.INFINITE);
+		anim.setInterpolator(new BounceInterpolator());
+		return anim;
 	}
 
 }
