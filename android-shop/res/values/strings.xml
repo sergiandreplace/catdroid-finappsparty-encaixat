@@ -18,4 +18,6 @@
     <string name="number_8">8</string>
     <string name="number_9">9</string>
 	<string name="number_c">C</string>
+	<string name="Ok">D\'acord</string>
+	<string name="Cancel">Cancel·la</string>
 </resources>
