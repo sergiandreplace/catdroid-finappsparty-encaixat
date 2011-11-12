@@ -47,7 +47,9 @@
 	<string name="lblProfile">Perfil</string>
 	
 	<string name="lblReceipt">Rebut</string>
-	
+
+	<string name="lblReceived">Encaixada rebuda</string>
+	    	
     <string name="invoiceReceivedOK">Encaixada completada</string>
     
     <string name="invoiceReceivedCancelled">Encaixada rebutjada</string>
