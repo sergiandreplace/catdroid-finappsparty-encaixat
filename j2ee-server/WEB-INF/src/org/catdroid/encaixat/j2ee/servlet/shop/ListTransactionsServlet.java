@@ -1,20 +1,18 @@
 package org.catdroid.encaixat.j2ee.servlet.shop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.ObjectOutputStream;
 import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.catdroid.encaixat.bean.Customer;
-import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
 import org.catdroid.encaixat.j2ee.bo.SprintBO;
 import org.catdroid.encaixat.j2ee.servlet.BaseHttpServlet;
-
-import com.google.gson.Gson;
 
 /** Client first action: "Hi, I'm at your shop!!"
  * 
@@ -40,11 +38,12 @@ public class ListTransactionsServlet extends BaseHttpServlet {
 			throw new ServletException(e.getMessage());
 		}
 		
-		prepareHtmlResponse(resp);
-		PrintWriter out = resp.getWriter();
-		out.append(new Gson().toJson(transactions));
-		out.flush();
-		out.close();
+		ServletOutputStream sos = resp.getOutputStream();
+		GZIPOutputStream gos = new GZIPOutputStream(sos);
+		ObjectOutputStream oos = new ObjectOutputStream(gos);
+		oos.writeObject(transactions);
+		oos.flush();
+		oos.close();
 	}
 
 }
