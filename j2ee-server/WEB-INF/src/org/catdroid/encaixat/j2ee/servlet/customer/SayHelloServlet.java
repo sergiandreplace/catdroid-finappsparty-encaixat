@@ -44,7 +44,7 @@ public class SayHelloServlet extends BaseHttpServlet {
 			throw new ServletException(e.getMessage());
 		}
 		
-		prepareHtmlResponse(resp);
+		prepareJsonResponse(resp);
 		PrintWriter out = resp.getWriter();
 		out.append(new Gson().toJson(t));
 		out.flush();

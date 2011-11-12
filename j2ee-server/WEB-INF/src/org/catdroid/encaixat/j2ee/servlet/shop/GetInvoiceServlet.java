@@ -49,7 +49,7 @@ public class GetInvoiceServlet extends BaseHttpServlet {
 			throw new ServletException(e.getMessage());
 		}
 		
-		prepareHtmlResponse(resp);
+		prepareJsonResponse(resp);
 		PrintWriter out = resp.getWriter();
 		out.append(new Gson().toJson(i));
 		out.flush();

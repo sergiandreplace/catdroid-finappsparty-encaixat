@@ -1,6 +1,8 @@
 package org.catdroid.encaixat.bean;
 
-public class Invoice {
+import java.io.Serializable;
+
+public class Invoice implements Serializable{
 	public static final boolean WAITING = false;
 	public static final boolean FINISHED = true;
 	
