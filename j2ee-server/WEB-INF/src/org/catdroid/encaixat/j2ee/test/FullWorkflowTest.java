@@ -71,9 +71,9 @@ public class FullWorkflowTest {
 			Log.i(SprintBO.sendInvoice(roc.getIdCustomer(), catdroid.getIdShop(), 30d).toString());
 			Log.i(SprintBO.sendInvoice(jordi.getIdCustomer(), starbugs.getIdShop(), 20d).toString());
 			
-			Invoice iRoc = SprintBO.getInvoice(roc.getIdCustomer(), catdroid.getIdShop());
-			Invoice iJordi = SprintBO.getInvoice(jordi.getIdCustomer(), starbugs.getIdShop());
-			Invoice iSergi = SprintBO.getInvoice(sergi.getIdCustomer(), starbugs.getIdShop());
+			Invoice iRoc = SprintBO.getWaitingInvoice(roc.getIdCustomer(), catdroid.getIdShop());
+			Invoice iJordi = SprintBO.getWaitingInvoice(jordi.getIdCustomer(), starbugs.getIdShop());
+			Invoice iSergi = SprintBO.getWaitingInvoice(sergi.getIdCustomer(), starbugs.getIdShop());
 			
 			Log.i(SprintBO.payInvoice(roc.getIdCustomer(), catdroid.getIdShop(), iRoc.getIdInvoice()).toString());
 			
