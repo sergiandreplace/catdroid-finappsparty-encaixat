@@ -86,7 +86,7 @@ public static Invoice getInvoices(Activity a, String idShop, String idCustomer){
 		// Prepare a request object
 		StringBuilder sb = new StringBuilder();
 		sb.append(a.getString(R.string.baseurl));
-		sb.append("sayHello");
+		sb.append("getInvoice");
 		sb.append("?idShop="+idShop);
 		sb.append("&idCustomer="+idCustomer);
 		
