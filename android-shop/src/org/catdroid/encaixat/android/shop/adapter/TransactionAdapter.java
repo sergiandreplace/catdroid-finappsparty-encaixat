@@ -3,6 +3,7 @@ package org.catdroid.encaixat.android.shop.adapter;
 import java.util.ArrayList;
 
 import org.catdroid.encaixat.android.shop.R;
+import org.catdroid.encaixat.android.shop.image.BitmapLoader;
 import org.catdroid.encaixat.bean.Transaction;
 
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -49,6 +51,7 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 			vh.background = (LinearLayout) v
 					.findViewById(R.id.TransactionBackground);
 			vh.amount = (TextView) v.findViewById(R.id.TransactionAmount);
+			vh.picture=(ImageView) v.findViewById(R.id.TransactionPicture);
 			v.setTag(vh);
 		} else {
 			vh = (ViewHolder) v.getTag();
@@ -57,17 +60,18 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 		transaction = transactions.get(position);
 
 		vh.name.setText(transaction.getCustomer().getName());
-		if (listFormat != FORMAT_HELLO) {
-			vh.amount.setText(String.format("%d €", transaction.getInvoice()
-					.getQuantity().toString()));
+		vh.picture.setImageBitmap(BitmapLoader.getBitmap(transaction.getCustomer().getPicture()));
+//		if (listFormat != FORMAT_HELLO) {
+//			vh.amount.setText(transaction.getInvoice()
+//					.getQuantity().toString());
 			if (listFormat == FORMAT_FINISHED) {
 				vh.background
 						.setBackgroundResource(R.drawable.button_green_normal);
 			}
-			if (listFormat == FORMAT_WAITING) {
-				vh.background.startAnimation(getWaitingAnimation());
-			}
-		}
+//			if (listFormat == FORMAT_WAITING) {
+//				vh.background.startAnimation(getWaitingAnimation());
+//			}
+//		}
 		return v;
 	}
 
@@ -75,6 +79,7 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
 		TextView name;
 		LinearLayout background;
 		TextView amount;
+		ImageView picture;
 	}
 
 	private Animation getWaitingAnimation() {
