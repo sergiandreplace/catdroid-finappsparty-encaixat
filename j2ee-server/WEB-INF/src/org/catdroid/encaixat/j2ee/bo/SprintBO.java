@@ -23,6 +23,21 @@ public class SprintBO {
 		return SprintDAO.createTransaction(c,s);
 	}
 	
+	public static Transaction getWaitingTransaction(String idCustomer, String idShop) throws Exception{
+		Customer c = SprintDAO.getCustomer(idCustomer);
+		Shop s = SprintDAO.getShop(idShop);
+		
+		if (c==null){
+			throw new Exception("The Client is null");
+		}
+		if (s==null){
+			throw new Exception("The Shop is null");
+		}
+		
+		Transaction t = SprintDAO.getWaitingTransaction(c, s);
+		return t;
+	}
+	
 	public static Invoice getWaitingInvoice(String idCustomer, String idShop) throws Exception{
 		Customer c = SprintDAO.getCustomer(idCustomer);
 		Shop s = SprintDAO.getShop(idShop);
