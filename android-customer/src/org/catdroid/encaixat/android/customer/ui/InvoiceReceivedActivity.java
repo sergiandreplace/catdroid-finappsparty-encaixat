@@ -30,13 +30,13 @@ public class InvoiceReceivedActivity extends Activity implements OnClickListener
 		Intent data = getIntent();
 		String invoiceID = data.getExtras().getString("INVOICE_ID");
 		// check that the invoice from the intent is same as the one in Session
-		if (invoiceID == Session.invoice.getIdInvoice()) {
+		if (invoiceID.equals(Session.invoice.getIdInvoice())) {
 			TextView txtAmount = (TextView) findViewById(R.id.txtAmount);
-			String amount = String.format("%.1f €", Session.invoice.getQuantity());
+			String amount = String.format("%.2f €", Session.invoice.getQuantity());
 			txtAmount.setText(amount);	
 		} else {
 			// something weird happened
-			Toast.makeText(getApplicationContext(), "Something weird happened...", Toast.LENGTH_SHORT);
+			Toast.makeText(this, "Something weird happened...", Toast.LENGTH_SHORT);
 		}
 	}
 
