@@ -2,6 +2,8 @@ package org.catdroid.encaixat.android.shop.manager;
 
 import java.util.ArrayList;
 
+import org.catdroid.encaixat.android.shop.dao.ServerManager;
+import org.catdroid.encaixat.android.shop.ui.MainActivity;
 import org.catdroid.encaixat.bean.Customer;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
@@ -25,13 +27,12 @@ public  class TransactionManager {
 	}
 
 	public static ArrayList<Transaction> updateTransactions() {
-		transactions.clear();
-		Customer c=new Customer("1", "Sr. Dit", "");
-		Transaction t=new Transaction(c, null, null);
-		transactions.add(t);
-		transactions.add(t);
-		
+		transactions = ServerManager.listTransactions(MainActivity.activity, MainActivity.idShop);
 		return transactions;
+	}
+	
+	public static Invoice sendInvoice(String idCustomer, Double quantity){
+		return ServerManager.sendInvoice(MainActivity.activity, MainActivity.idShop, idCustomer, quantity);
 	}
 
 	public static ArrayList<Transaction> getStatusTransactions(int status) {
