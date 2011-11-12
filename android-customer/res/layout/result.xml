@@ -23,12 +23,13 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name" />
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         style="@style/SectionContent"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="top"
         android:orientation="vertical" >
 
@@ -65,20 +66,23 @@
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-
+
         <Button
             android:id="@+id/btnNewInvoice"
             style="@style/GreenButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/btnNewInvoice" />
-
+
         <Button
             android:id="@+id/btnExit"
             style="@style/RedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/btnExit" />
+
     </LinearLayout>
 
 </LinearLayout>
