@@ -2,48 +2,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/panel_white"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
-        style="@style/SectionHeader"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_header" />
+        android:layout_height="wrap_content" >
 
-    <org.catdroid.encaixat.android.shop.view.HorizontalListView
-        android:id="@+id/HelloList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left" >
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    </org.catdroid.encaixat.android.shop.view.HorizontalListView>
-    
-    <TextView
-        android:id="@+id/TextView02"
-        style="@style/SectionHeader"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/header_waiting" />
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/panel_white"
+                android:orientation="vertical" >
 
- <org.catdroid.encaixat.android.shop.view.HorizontalListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:id="@+id/WaitingList">
-    </org.catdroid.encaixat.android.shop.view.HorizontalListView>
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/SectionHeader"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/hello_header" />
 
-    <TextView
-        android:id="@+id/TextView01"
-        style="@style/SectionHeader"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/header_finished" />
+                <org.catdroid.encaixat.android.shop.view.HorizontalListView
+                    android:id="@+id/HelloList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:padding="5dp" >
+                </org.catdroid.encaixat.android.shop.view.HorizontalListView>
+            </LinearLayout>
 
- <org.catdroid.encaixat.android.shop.view.HorizontalListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:id="@+id/FinishedList">
-    </org.catdroid.encaixat.android.shop.view.HorizontalListView>
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/panel_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                     style="@style/SectionHeader"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/hello_header" />
+
+                <org.catdroid.encaixat.android.shop.view.HorizontalListView
+                    android:id="@+id/WaitingList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:padding="5dp" >
+                </org.catdroid.encaixat.android.shop.view.HorizontalListView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/panel_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                      style="@style/SectionHeader"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/hello_header" />
+
+                <org.catdroid.encaixat.android.shop.view.HorizontalListView
+                    android:id="@+id/FinishedList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:padding="5dp" >
+                </org.catdroid.encaixat.android.shop.view.HorizontalListView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
