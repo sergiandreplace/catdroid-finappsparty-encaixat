@@ -5,7 +5,7 @@
         <item name="android:background">@drawable/button_black</item>
         <item name="android:clickable">true</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">7dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
@@ -20,34 +20,31 @@
         <item name="android:background">@drawable/button_red</item>
     </style>
 
-    <style name="SectionHeader" parent="android:Widget.TextView">
-        <item name="android:background">@drawable/panel_yellow</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:padding">10dp</item>
+    <style name="StandardText" parent="android:Widget.TextView">
         <item name="android:textColor">@color/Text</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="SectionTitle" parent="android:Widget.TextView">
+    <style name="SectionHeader" parent="@style/StandardText">
+        <item name="android:background">@drawable/panel_yellow</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="SectionTitle" parent="@style/StandardText">
         <item name="android:background">@drawable/panel_blue</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:textColor">@color/Text</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:padding">3dp</item>
     </style>
-        
-        
-    <style name="SectionContent" parent="android:Widget.TextView">
+
+    <style name="SectionContent" parent="@style/StandardText">
         <item name="android:background">@drawable/panel_white</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_margin">10dp</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textColor">@color/Text</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:padding">8dp</item>
     </style>
-        
+
 </resources>
