@@ -2,8 +2,11 @@ package org.catdroid.encaixat.android.shop.dao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.zip.GZIPInputStream;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -12,11 +15,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.catdroid.encaixat.android.shop.R;
+import org.catdroid.encaixat.android.shop.Constants;
 import org.catdroid.encaixat.bean.Invoice;
 import org.catdroid.encaixat.bean.Transaction;
-
-import android.app.Activity;
 
 import com.google.gson.Gson;
 
@@ -50,42 +51,48 @@ public class ServerManager {
 		return result.toString();
 	}
 	
-	public static ArrayList<Transaction> listTransactions(Activity a, String idShop){
+	@SuppressWarnings("unchecked")
+	public static ArrayList<Transaction> listTransactions(String idShop){
 		
 		DefaultHttpClient httpclient = getNewHttpClient();
 		
 		// Prepare a request object
 		StringBuilder sb = new StringBuilder();
-		sb.append(a.getString(R.string.baseurl));
+		sb.append(Constants.BASEURL);
 		sb.append("listTransactions");
 		sb.append("?idShop="+idShop);
 		
 		HttpResponse response;
-		ArrayList<Transaction> l = null;
+		ArrayList<Transaction> l = new ArrayList<Transaction>(); 
 
 		try {
 			response = httpclient.execute(new HttpGet(sb.toString()));
 			HttpEntity entity = response.getEntity();
 
 			if (entity != null) {
-				String json = processContent(entity);
-				l = new Gson().fromJson(json, ArrayList.class);
+				InputStream instream = entity.getContent();
+				GZIPInputStream gzip = new GZIPInputStream(instream);
+				ObjectInputStream ois = new ObjectInputStream(gzip);
+				l = (ArrayList) ois.readObject();
+				ois.close();
+				gzip.close();
+				instream.close();
 			}
 
-		} catch (Exception e) {
+		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 
 		return l;
 	}
 	
-public static Invoice sendInvoice(Activity a, String idShop, String idCustomer, Double quantity){
+public static Invoice sendInvoice(String idShop, String idCustomer, Double quantity){
 		
 		DefaultHttpClient httpclient = getNewHttpClient();
 		
 		// Prepare a request object
 		StringBuilder sb = new StringBuilder();
-		sb.append(a.getString(R.string.baseurl));
+		sb.append(Constants.BASEURL);
 		sb.append("sendInvoice");
 		sb.append("?idShop="+idShop);
 		sb.append("&idCustomer="+idCustomer);

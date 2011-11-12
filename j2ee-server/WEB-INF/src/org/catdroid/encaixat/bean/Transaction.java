@@ -1,6 +1,8 @@
 package org.catdroid.encaixat.bean;
 
-public class Transaction {
+import java.io.Serializable;
+
+public class Transaction implements Serializable{
 	
 	Customer customer;
 	Invoice invoice;

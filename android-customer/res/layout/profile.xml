@@ -3,29 +3,57 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
-    <ImageView
-        android:id="@+id/ivFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/txtUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtUserName" />
-
-    <TextView
-        android:id="@+id/txtPaymentType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtPaymentType" />
 
-    <ListView
-        android:id="@+id/listView1"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        style="@style/SectionTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-    </ListView>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/SectionContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/ivFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtUserName" />
+
+        <TextView
+            android:id="@+id/txtPaymentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtPaymentType" />
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
 
 </LinearLayout>

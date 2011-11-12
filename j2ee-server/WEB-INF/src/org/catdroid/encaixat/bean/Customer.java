@@ -1,6 +1,8 @@
 package org.catdroid.encaixat.bean;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable{
 	String idCustomer;
 	String name;
 	String picture;
