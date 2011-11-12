@@ -44,11 +44,12 @@ public class SprintDAO {
 	public static Invoice getInvoice(String idInvoice){
 		return invoices.get(idInvoice);
 	}
-	public static Invoice getInvoice(Customer c, Shop s){
+	public static Invoice getWaitingInvoice(Customer c, Shop s){
 		for (Iterator<Transaction> iterator = transactions.iterator(); iterator.hasNext();) {
 			Transaction t = iterator.next();
 			if (t.getCustomer().getIdCustomer().equals(c.getIdCustomer()) &&
-				t.getShop().getIdShop().equals(s.getIdShop())
+				t.getShop().getIdShop().equals(s.getIdShop()) &&
+				t.getInvoice().getStatus()==Invoice.WAITING
 			){
 				return t.getInvoice();
 			}
