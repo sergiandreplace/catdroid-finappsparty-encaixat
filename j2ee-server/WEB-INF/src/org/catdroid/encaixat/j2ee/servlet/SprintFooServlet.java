@@ -16,6 +16,8 @@ public class SprintFooServlet extends BaseHttpServlet{
 		SprintDAO.addCustomer("Jordi Bernabeu", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
 		SprintDAO.addCustomer("Sergi Martinez", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
 		SprintDAO.addCustomer("Jordi Varela", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
+		SprintDAO.addCustomer("Margarita Limón", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
+		SprintDAO.addCustomer("Rosa Naranjas", "http://es.wikipedia.org/wiki/Archivo:Bananas_white_background.jpg");
 		
 		Log.i("Adding fake shops...");
 		SprintDAO.addShop("Catdroid's Store");

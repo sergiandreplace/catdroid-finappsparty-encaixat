@@ -43,6 +43,7 @@
 		<url-pattern>/customer/payInvoice</url-pattern>
 	</servlet-mapping>
 	
+	<!-- SHOP SERVLETS -->
 	<servlet>
 		<servlet-name>ShopSendInvoice</servlet-name>
 		<servlet-class>org.catdroid.encaixat.j2ee.servlet.shop.SendInvoiceServlet</servlet-class>
