@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Encaixa\'t</string>
+	<string name="app_name">Encaixa\'t</string>
 
-    <string name="checkin">Entrar a la botiga</string>
+	<string name="checkin">Entrar a la botiga</string>
 
-    <string name="userprofile">Perfil d\'usuari</string>
+	<string name="userprofile">Perfil d\'usuari</string>
 
-    <string name="about">Crèdits</string>
+	<string name="about">Crèdits</string>
 
-    <string name="txtAbout">Encaixa\'t és una idea de l\'equip Catdroid per al concurs bdigital FinApps 2011.</string>
+	<string name="txtAbout">Encaixa\'t és una idea de l\'equip Catdroid per al
+		concurs bdigital FinApps 2011.</string>
 
-    <string name="txtUserName">Nom usuari</string>
+	<string name="txtUserName">Nom usuari</string>
 
-    <string name="txtPaymentType">Visa XXXX-XXXX-XXXX</string>
+	<string name="txtPaymentType">Visa XXXX-XXXX-XXXX</string>
 
-    <string name="txtShopName">Nom de la botiga</string>
+	<string name="txtShopName">Nom de la botiga</string>
 
-    <string name="txtDate">11/11/2011 14:00</string>
+	<string name="txtDate">11/11/2011 14:00</string>
 
-    <string name="txtAmount">0.00 €</string>
+	<string name="txtAmount">0.00 €</string>
 
-    <string name="how_to_check_in">Fer check-in amb:</string>
+	<string name="how_to_check_in">Fer check-in amb:</string>
 
-    <string name="txtShopID">SHOP_ID</string>
+	<string name="txtShopID">SHOP_ID</string>
 
-    <string name="txtEncaixada">Esperant encaixada...</string>
+	<string name="txtEncaixada">Esperant encaixada...</string>
 
-    <string name="txtResult">Resultat de l\'encaixada</string>
+	<string name="txtResult">Resultat de l\'encaixada</string>
 
-    <string name="btnNewInvoice">Nova encaixada</string>
+	<string name="btnNewInvoice">Nova encaixada</string>
 
-    <string name="btnExit">Sortir de la botiga</string>
-        
-    <string name="baseurl">http://172.20.152.19/encaixat/customer/</string>
-        
-    <string name="txtInvoiceReceived">Encaixada rebuda!</string>
-        
-    <string name="btnOK">Acceptar encaixada</string>
-        
-    <string name="btnCancel">Rebutjar encaixada</string>
-        
-    <string name="lblResult">Resultat transacció</string>
+	<string name="btnExit">Sortir de la botiga</string>
 
-    <string name="invoiceReceivedOK">Encaixada completada!</string>
-        
-    <string name="invoiceReceivedCancelled">Encaixada cancelada!</string>
+	<string name="baseurl">http://172.20.152.19/encaixat/customer/</string>
 
+	<string name="txtInvoiceReceived">Encaixada rebuda!</string>
+
+	<string name="btnOK">Acceptar encaixada</string>
+
+	<string name="btnCancel">Rebutjar encaixada</string>
+
+	<string name="lblResult">Resultat transacció</string>
+	
+	<string name="lblProfile">Perfil</string>
+	
+	<string name="lblReceipt">Rebut</string>
+	
 </resources>
