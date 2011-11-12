@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.catdroid.encaixat.android.shop.Constants;
 import org.catdroid.encaixat.android.shop.R;
 import org.catdroid.encaixat.android.shop.adapter.TransactionAdapter;
+import org.catdroid.encaixat.android.shop.dao.ServerManager;
 import org.catdroid.encaixat.android.shop.manager.TransactionManager;
 import org.catdroid.encaixat.android.shop.view.HorizontalListView;
 import org.catdroid.encaixat.bean.Transaction;
@@ -38,15 +39,13 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 
 		getViews();
 		setListeners();
-		getData();
-		setData();
 		update();
 		return me;
 	}
 
 	private void getViews() {
 		helloList = (HorizontalListView) me.findViewById(R.id.HelloList);
-		waitingList = (HorizontalListView) me.findViewById(R.id.HelloList);
+		waitingList = (HorizontalListView) me.findViewById(R.id.WaitingList);
 		finishedList = (HorizontalListView) me.findViewById(R.id.FinishedList);
 
 	}
@@ -68,17 +67,18 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 
 	private void setData() {
 
-		helloAdapter = new TransactionAdapter(getActivity(), helloTransactions);
+		helloAdapter = new TransactionAdapter(getActivity(), helloTransactions,
+				TransactionAdapter.FORMAT_HELLO);
 		helloList.setAdapter(helloAdapter);
 		helloAdapter.notifyDataSetChanged();
 
 		waitingAdapter = new TransactionAdapter(getActivity(),
-				waitingTransactions);
+				waitingTransactions, TransactionAdapter.FORMAT_WAITING);
 		waitingList.setAdapter(waitingAdapter);
 		waitingAdapter.notifyDataSetChanged();
 
 		finishedAdapter = new TransactionAdapter(getActivity(),
-				finishedTransactions);
+				finishedTransactions, TransactionAdapter.FORMAT_FINISHED);
 		finishedList.setAdapter(finishedAdapter);
 		finishedAdapter.notifyDataSetChanged();
 	}
@@ -88,9 +88,30 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 		setData();
 	}
 
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Transaction transaction = TransactionManager.getTransactions().get(
+				position);
 		Intent i = new Intent(getActivity(), EnterPriceActivity.class);
-		startActivity(i);
-		
+		i.putExtra(EnterPriceActivity.EXTRA_ID_CUSTOMER, transaction
+				.getCustomer().getIdCustomer());
+		// startActivityForResult(i, 0);
+		ServerManager.sendInvoice("0", "0", (double) 25);
+
+		update();
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (resultCode == EnterPriceActivity.RESULT_OK) {
+			String idCustomer = data.getExtras().getString(
+					EnterPriceActivity.EXTRA_ID_CUSTOMER);
+			Double amount = data.getExtras().getDouble(
+					EnterPriceActivity.EXTRA_AMOUNT);
+		}
+		// ServerManager.sendInvoice(Constants.ID_SHOP, idCustomer, amount);
+
+		// }
 	}
 }
