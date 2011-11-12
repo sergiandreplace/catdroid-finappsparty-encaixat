@@ -8,6 +8,13 @@ public class Invoice implements Serializable{
 	
 	String idInvoice;
 	String idShop;
+	public Double getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Double quantity) {
+		this.quantity = quantity;
+	}
+
 	String idCustomer;
 	Double quantity;
 
@@ -41,12 +48,6 @@ public class Invoice implements Serializable{
 	}
 	public void setIdCustomer(String idCustomer) {
 		this.idCustomer = idCustomer;
-	}
-	public Double getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Double q) {
-		this.quantity = q;
 	}
 	public boolean getStatus() {
 		return status;

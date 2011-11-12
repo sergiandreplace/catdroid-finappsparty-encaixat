@@ -52,4 +52,6 @@
     
     <string name="invoiceReceivedCancelled">Encaixada rebutjada</string>
 	
+    <string name="preference.customer.title">Usuari</string>
+    <string name="preference.customer.summary">idUsuari a la base de dades</string>
 </resources>
