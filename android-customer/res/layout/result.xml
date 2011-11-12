@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/panel_black"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -19,12 +18,12 @@
 
         <TextView
             android:id="@+id/textView1"
-            style="@style/SectionTitle"
+            style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name" />
     </LinearLayout>
-
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         style="@style/SectionContent"
@@ -42,18 +41,21 @@
 
         <TextView
             android:id="@+id/txtResult"
+            style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtResult" />
 
         <TextView
             android:id="@+id/txtShopName"
+            style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtShopName" />
 
         <TextView
             android:id="@+id/txtAmount"
+            style="@style/StandardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txtAmount" />
