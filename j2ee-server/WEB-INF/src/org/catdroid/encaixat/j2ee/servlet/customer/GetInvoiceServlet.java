@@ -40,7 +40,7 @@ public class GetInvoiceServlet extends BaseHttpServlet {
 		
 		Invoice i = null;
 		try {
-			i = SprintBO.getInvoice(idCustomer, idShop);
+			i = SprintBO.getWaitingInvoice(idCustomer, idShop);
 		} catch (Exception e) {
 			throw new ServletException(e.getMessage());
 		}
