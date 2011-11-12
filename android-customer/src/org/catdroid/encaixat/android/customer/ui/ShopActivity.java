@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class ShopActivity extends Activity {
 
+	public InvoiceRequestTask task; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -36,7 +38,16 @@ public class ShopActivity extends Activity {
 		txtEncaixada.setText(R.id.txtEncaixada);
 		
 		// start polling for incoming invoice
-		new InvoiceRequestTask(this).execute();
+		task = new InvoiceRequestTask(this);
+		task.execute();
+	}
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		// cancel the running async task
+		task.cancel(true);
+		super.onBackPressed();
 	}
 
 
