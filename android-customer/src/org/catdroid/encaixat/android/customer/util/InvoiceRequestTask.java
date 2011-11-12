@@ -29,7 +29,7 @@ public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 				e.printStackTrace();
 			}
 			inv = ServerManager.getInvoices(a, Session.shop.getIdShop(), Session.customer.getIdCustomer());
-		} while (inv == null);
+		} while (inv == null && isCancelled() != true);
 		
 		return inv;
 	}
@@ -45,7 +45,7 @@ public class InvoiceRequestTask extends AsyncTask<Shop, Integer, Invoice> {
 		// TODO Auto-generated method stub
 		super.onPostExecute(result);
 		// update Session data
-		Session.invoice.setIdInvoice(result.getIdInvoice());
+		Session.invoice = result;
 		// pass data on to next activity
 		Intent i = new Intent(a, InvoiceReceivedActivity.class);
 		i.putExtra("INVOICE_ID", result.getIdInvoice());
