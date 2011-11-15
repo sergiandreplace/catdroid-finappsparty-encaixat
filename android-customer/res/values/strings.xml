@@ -34,7 +34,7 @@
 
 	<string name="btnExit">Sortir de la botiga</string>
 
-	<string name="baseurl">http://172.20.152.19/encaixat/customer/</string>
+	<string name="baseurl">http://catdroid.org/encaixat/customer/</string>
 
 	<string name="txtInvoiceReceived">Encaixada rebuda!</string>
 
