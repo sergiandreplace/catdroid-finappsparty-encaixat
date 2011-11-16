@@ -4,7 +4,7 @@ syntax: glob
 *.class
 *.dex
 *.ap_
-*.apk 
+# *.apk 
 *.war
 *.cvsignore
 *.tomcatplugin
